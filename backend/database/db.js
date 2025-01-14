@@ -1,12 +1,11 @@
-const mongoose= require("mongoose");
-const {MONgoDB_CONNECTION_STRING} = require ("../config/index")
+const mongoose = require('mongoose');
+const connectioString= "mongodb+srv://jjawadamn883:jjawadamn883@cluster0.uif7o.mongodb.net/coin-bounce?retryWrites=true&w=majority&appName=Cluster0";
 const dbConnect= async()=>{
-    try{
-        mongoose.set('strictQuery', false);
-        const conn = await mongoose.connect(MONgoDB_CONNECTION_STRING);
-        console.log(`Database Connected to host ${conn.connection.host}`);
-    } catch(error){
-        console.log(`Error: ${error}`)
-    }
+    try {
+        const conn = await mongoose.connect(connectioString);
+        console.log(`MongoDB connected: ${conn.connection.host}`);
 }
+catch(error){
+    console.log(`Error : ${error}`)
+}}
 module.exports=dbConnect;
