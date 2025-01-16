@@ -18,4 +18,4 @@ app.use(router);
 app.use(errorHandler);
 
 // Start the server
-app.listen(PORT, () => console.log(`Backend is running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Backend is running on port : ${PORT}`));
